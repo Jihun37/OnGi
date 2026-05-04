@@ -31,22 +31,30 @@ The more people contribute, the richer and more accurate the archive becomes. On
 <br/>
 
 ### 1. Capture & Upload
-Users visit museums, temples, and historic sites and photograph the artifacts they encounter. Each photo is uploaded to the app and tagged with the artifact name.
+Users visit museums, temples, and historic sites and photograph the artifacts they encounter. Each photo is uploaded to the app along with the artifact name as a tag. Multiple images can be attached to a single feed, and all uploads are stored with metadata for later use in 3D reconstruction.
 
 ### 2. Crowdsource & Accumulate
-Photos from different users of the same artifact are automatically grouped. Once 10 or more images are collected, the artifact entry is created in the system.
+Photos from different users of the same artifact are automatically grouped together by artifact name. The system continuously tracks the total image count across all related feeds. Once 10 or more images of the same artifact are collected, an artifact entry is automatically created in the system and linked to all contributing feeds.
 
 ### 3. Review & Verify
-Admins review the accumulated images, verify the artifact information, and prepare the dataset for 3D reconstruction.
+Admins review the automatically generated artifact entries through the Django Admin panel. They verify the artifact's information — name, era, origin location, and description — and update the status from `auto_generated` to `verified` or `featured`. Rejected entries are hidden from public view. Only verified artifacts are surfaced to general users in the app.
 
 ### 4. Reconstruct in 3D
-The verified image set is processed through photogrammetry software, transforming hundreds of ordinary photos into a detailed 3D model.
+Once an artifact is verified, the accumulated source images are exported and processed through photogrammetry software. The software analyzes camera positions and overlapping image data to reconstruct a precise, textured 3D model. The completed model — along with its metadata such as polygon count, file size, and format — is then uploaded back to the system.
 
 ### 5. Explore & Preserve
-The 3D model is published in the app for anyone to explore. Users can browse the artifact from every angle, read its history, and see the community feeds that made it possible — while the artifact is digitally preserved for future generations.
+The 3D model is published in the app for anyone to explore. Users can view the artifact from every angle directly in the app, read its historical background, and browse the community feeds that made the reconstruction possible. Every artifact in OnGi is not just a digital object — it is a piece of Korean heritage preserved for future generations.
 
 <div align="center">
   <img src="assets/artifact_screens.png" width="700"/>
+</div>
+
+---
+
+## Database ERD
+
+<div align="center">
+  <img src="assets/erd.png" width="800"/>
 </div>
 
 ---
