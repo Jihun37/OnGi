@@ -22,60 +22,32 @@ The more people contribute, the richer and more accurate the archive becomes. On
 
 ---
 
-## Features
+## How It Works
 
-### Artifact Search
-<div align="center">
-  <img src="assets/artifact_screens.png" width="700"/>
-</div>
-
-- Search artifacts by name, era, or excavation site
-- View artifact details including image count, feed count, and registration date
-- Filter artifacts by status (verified, featured, etc.)
-
-<br/>
-
-### Artifact Detail & 3D Model
-- Browse basic artifact info — era, estimated year, origin location, and description
-- Preview the 3D model directly in the app
-- View all related feeds linked to the artifact
-
-<br/>
-
-### Feed Upload
-- Photograph an artifact and upload it as a feed
-- Tag the artifact name for automatic archiving
-- Once 10 or more images of the same artifact are collected, the artifact is created automatically
-
-<br/>
-
-### Admin System
 <div align="center">
   <img src="assets/workflow.png" width="700"/>
 </div>
 
-- Artifact management via Django Admin
-- Manage artifact status (auto generated → verified → featured / rejected)
-- Inline preview of linked feeds and images
-- Integrated with 3D reconstruction software to generate models
+<br/>
 
----
+### 1. Capture & Upload
+Users visit museums, temples, and historic sites and photograph the artifacts they encounter. Each photo is uploaded to the app and tagged with the artifact name.
 
-## Workflow
+### 2. Crowdsource & Accumulate
+Photos from different users of the same artifact are automatically grouped. Once 10 or more images are collected, the artifact entry is created in the system.
 
-```
-User captures & uploads photos
-        ↓
-Feeds auto-classified by artifact name
-        ↓
-10+ images collected → Artifact auto-created
-        ↓
-Admin reviews & verifies
-        ↓
-3D reconstruction software generates model
-        ↓
-3D model & artifact info served in app
-```
+### 3. Review & Verify
+Admins review the accumulated images, verify the artifact information, and prepare the dataset for 3D reconstruction.
+
+### 4. Reconstruct in 3D
+The verified image set is processed through photogrammetry software, transforming hundreds of ordinary photos into a detailed 3D model.
+
+### 5. Explore & Preserve
+The 3D model is published in the app for anyone to explore. Users can browse the artifact from every angle, read its history, and see the community feeds that made it possible — while the artifact is digitally preserved for future generations.
+
+<div align="center">
+  <img src="assets/artifact_screens.png" width="700"/>
+</div>
 
 ---
 
